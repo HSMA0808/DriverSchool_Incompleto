@@ -84,5 +84,27 @@ namespace Driver_Principal.Formularios
             parametro1 = dgvParametros.SelectedCells[1].Value.ToString();
             parametro2 = dgvParametros.SelectedCells[2].Value.ToString();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (id == 0 || parametro1 == string.Empty || parametro2 == string.Empty)
+            {
+                Controladores.SeleccioneUnRegistro();
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Yes;
+            }
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Controladores.DeseaCerrar(this);
+        }
+
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
